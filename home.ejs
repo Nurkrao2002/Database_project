@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="#">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- Bootstrap CSS -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+            <link href="https://cdn.datatables.net/1.12.0/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    
+            <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+            <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+    
+            <script src="https://cdn.datatables.net/1.12.0/js/dataTables.bootstrap5.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+        #navbarr{
+            background-color: rgb(0, 0, 0);
+            height: 60px;
+            /* width: auto; */
+            /* padding-top: 40px; */
+            /* justify-content: center; */
+            text-align: center;
+            margin-top: -8px;
+        }
+        
+        #databasename {
+            color: rgb(0, 0, 255);
+            font-family: sans-serif;
+            padding-right: 200px;
+            margin-left: 3%;
+            font-weight: 800px;
+            font-size: 30px;
+        }
+        
+        #databasename:hover {
+            color: rgb(255, 255, 255);
+        }
+        
+        #navbarScroll li a {
+        
+            color: rgb(242, 24, 24);
+            padding: 12px;
+            /* border-color: rgb(247, 143, 7); */
+            /* border: 1px; */
+        
+        }
+        #navbarScroll li a:hover {
+            color: rgb(255, 255, 255);
+        }
+        
+        #btn {
+            border-color: aliceblue;
+            color: aliceblue;
+        }
+        
+        #btn:hover {
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+        }
+        
+        /* #searchh {
+            background-color: ;
+        } */
+
+      /*
+        <!-- sidebar css starts here -->
+        */
+
+        @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+        /* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 7%;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+      /*  .aside{
+          position: fixed;
+          width: 250px;
+          top:20px;
+          left: 0;
+          bottom: 0;
+          background: #000000;
+          padding-top: 50px;
+          box-shadow: 2px solid black;
+       }
+       
+       .sidebar h1{
+          display: block;
+          padding: 10px 20px;
+          color: #fff;
+          text-decoration: none;
+          font-family: "Rubik";
+          letter-spacing: 2px;
+          font-weight: 400;
+          margin: 0;
+          font-size: 25px;
+          text-transform: uppercase;
+       }
+
+       
+       
+       .aside a{
+          display: block;
+          padding: 10px 20px;
+          color: #bbb;
+          text-decoration: none;
+          font-family: "Rubik";
+          letter-spacing: 2px;
+       }
+       
+       .aside a:hover{
+          color: #fff;
+          margin-left: 20px;
+          transition: 0.4s;
+       }
+       */
+
+      
+
+      
+
+       .card {
+        margin-left: 13%;
+        border-radius: 3px;
+        border-color: #000000;
+        text-align: center;
+        justify-content: center;
+        background-color: rgb(92, 217, 224);
+        color: #1325f1;
+        margin-top: 4px;
+        display: flex;
+
+        
+       }
+
+       .container {
+        margin-left: 22%;
+        width: 70vw;
+        display: grid;
+        border-radius: 3px;
+        border-color: rgb(247, 150, 6);
+        grid-template-columns: auto auto auto auto;
+        /* grid-template-rows: repeat(6,auto); */
+        grid-column-gap: 2px;
+        grid-row-gap: 12px;
+        
+       }
+       #myfile{
+        margin-left: 45%;
+        margin-top: 25%;
+       }
+       #switch{
+        margin-left: 58%;
+        
+       }
+
+       form {
+        margin-left: 12px;
+       }
+       #udayrama{
+        margin-top: 10%;
+        margin-left: 40%;
+       }
+
+      /*
+        <!-- sidebar css ends here -->
+        */
+    </style>
+    <title>Uday___DB</title>
+
+    <style>
+        
+    </style>
+</head>
+<body>
+          <!-- navbar starts here  -->
+
+    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid" id="navbarr">
+          <a class="navbar-brand" id="databasename" href="#">DataBase</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Queries</a>
+              </li>
+              
+            
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" id="searchh" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" id="btn" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <!-- navbar ends here  -->
+
+      <!-- ----------------------------------------------------------------------------------------------------------------------- -->
+
+      <!-- sidebar starts here  -->
+
+
+      <div class="sidenav">
+        <a href="#about">Home</a>
+        <button class="dropdown-btn">postgres 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="/fruits">fruits</a>
+          <a href="#">sample_data</a>
+          <a href="#">studentinfo</a>
+          <a href="#">studentinfo1</a>
+          <a href="#">students</a>
+        </div>
+        <!-- ---------------------------------------- -->
+        <button class="dropdown-btn">ram
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#">sample_data</a>
+        </div>
+        <button class="dropdown-btn">uday
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#">sample_data</a>
+        </div>
+        <button class="dropdown-btn">krishna
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#">sample_data</a>
+        </div>
+        <button class="dropdown-btn">sai
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#">sample_data</a>
+        </div>
+        <button class="dropdown-btn">aditiya
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#">sample_data</a>
+        </div>
+        <button class="dropdown-btn">gowtham
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#">sample_data</a>
+        </div>
+        <button class="dropdown-btn">Rama
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <ul>
+            <a href="#">sample_data</a>
+            <a href="#">sample_data</a>
+          </ul>
+          
+        </div>
+       
+      </div>
+     <script>
+      /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+      var dropdown = document.getElementsByClassName("dropdown-btn");
+      var i;
+      
+      for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var dropdownContent = this.nextElementSibling;
+          if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+          } else {
+            dropdownContent.style.display = "block";
+          }
+        });
+      }
+      </script>
+        
+
+
+      <!-- sidebar ends here  -->
+
+      <!-- ------------------------------------------------------------------------------------------------------------------------ -->
+    
+     <!-- main starts here  -->
+     <div class="container">
+      
+        <% database.forEach((database) => { %>
+        <li class="card" style="width: 12rem;"><%= database.datname %></li>
+        <% }); %>
+      
+     </div>
+
+   
+
+     <!-- main ends  here  -->
+     <div id="udayrama">
+     <h5>Upload your PostgreSQL query file</h5>
+     <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="sqlFile" id="sqlFile">
+      <button type="submit">Upload</button>
+  </form>
+     <div id="result"></div>
+    </div>
+
+
+     
+
+    
+
+</body>
+</html>
+

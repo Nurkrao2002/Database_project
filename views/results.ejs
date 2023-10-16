@@ -1,0 +1,72 @@
+<!-- views/results.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query Results</title>
+    <link rel="stylesheet" href="/views/public/styles.css">
+    <style>
+        /* public/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdfdfd;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #1500ff;
+}
+
+h2 {
+    color: #1100ff;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 2px solid aqua;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #ffffff;
+    font-weight: bolder;
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+        
+    </style>
+</head>
+<body>
+    <h1>Query Results</h1>
+    <% for (const result of data) { %>
+                <u><h2>Query Result</h2></u>
+        <table>
+            <thead>
+                <tr>
+                    <% for (const column in result[0]) { %>
+                        <th><%= column %></th>
+                    <% } %>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (const row of result) { %>
+                    <tr>
+                        <% for (const column in row) { %>
+                            <td><%= row[column] %></td>
+                        <% } %>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    <% } %>
+</body>
+</html>
